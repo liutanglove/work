@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<!-- 制定oracle/mysql的驱动包的路径 千万别放中文路径下 -->
+	<classPathEntry location="F:\ojdbc5.jar" />
+	<!-- 配置数据源和生成的代码所存放的位置 -->
+	<context id="zpark">
+		<!-- 是否生成注释 true不生成 false生成 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+		
+		<jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:xe" userId="shop" password="shop" />
+		<javaTypeResolver type="com.zpark.resover.MyJavaTypeResolver">
+		  <property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 所生成的实体类的位置  -->
+		<javaModelGenerator targetPackage="com.zpark.entity" targetProject="shop_ds_ui" />
+		<!-- 为哪些表生成代码 tableName:表名 schema:不用填写 -->
+		<table  tableName="s_product" domainObjectName="Product"/>
+		<table  tableName="s_img" domainObjectName="Image"/>
+	</context>
+</generatorConfiguration>

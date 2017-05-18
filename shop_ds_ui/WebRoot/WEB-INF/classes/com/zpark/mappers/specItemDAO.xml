@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zpark.dao.SpecItemDAO">
+	<resultMap type="SpeItem" id="si">
+		<id column="id" property="id"/>
+		<result column="show_type" property="showType"/>
+		<result column="sortNum" property="sortnum"/>
+		<result column="createTime" property="createtime"/>
+		<result column="lastUpdateTime" property="lastupdatetime"/>
+		<collection property="list" column="id" javaType="list" ofType="SpeOption" select="com.zpark.dao.SpecOptionDAO.selectById"/>
+	</resultMap>
+	<select id="selectAll"  resultMap="si">
+		select *
+		from s_speci_item
+	</select>
+	<insert id="insert" parameterType="SpeItem">
+		insert into s_speci_item
+		values (
+			#{id},
+			#{name,jdbcType=VARCHAR},
+			#{showType,jdbcType=VARCHAR},
+			#{note,jdbcType=VARCHAR},
+			#{sortnum,jdbcType=VARCHAR},
+			#{createtime,jdbcType=TIMESTAMP},
+			#{lastupdatetime,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<!--批量规格参数  -->
+	<delete id="delete" parameterType="list">
+		delete from s_speci_item where id in
+				<foreach collection="list" item="id" open="(" separator="," close=")">
+					#{id}
+				</foreach>
+	</delete>
+	<!--根据Id查询规格  -->
+	<select id="selectById" parameterType="String" resultMap="si">
+		select *
+		from s_speci_item where id = #{id}
+	</select>
+	<!--更新  -->
+	<update id="update" parameterType="SpeItem">
+		update s_speci_item set 
+						name=#{name,jdbcType=VARCHAR},
+						show_type=#{showType,jdbcType=VARCHAR},
+						note=#{note,jdbcType=VARCHAR},
+						sortNum=#{sortnum,jdbcType=VARCHAR},
+						createTime=#{createtime,jdbcType=TIMESTAMP},
+						lastUpdateTime=#{lastupdatetime,jdbcType=TIMESTAMP}
+						where id = #{id}
+	</update>
+</mapper>

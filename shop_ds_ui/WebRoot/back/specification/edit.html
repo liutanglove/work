@@ -1,0 +1,188 @@
+<html>
+<head>
+<title>修改规格</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="../css/common.css" type="text/css"></link>
+<script type="text/javascript" src="../script/jquery.js"></script>
+<script type="text/javascript" src="../script/jquery.tools.js"></script>
+<script type="text/javascript" src="../editor/kindeditor.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<style type="text/css">
+	*{font: 12px tahoma, Arial, Verdana, sans-serif;}
+</style>
+<script type="text/javascript">
+	$(function(){
+			var $specificationTable = $("#specificationTable");
+			var $type = $("#type");
+			var $addSpecificationValueButton = $("#addSpecificationValueButton");
+			var $deleteSpecificationValue = $("a.deleteSpecificationValue");
+			var specificationValueIndex = 20;
+
+			// 修改规格类型
+			$type.change(function() {
+						if ($(this).val() == "text") {
+							$("input.specificationValuesImage")
+									.val("").prop("disabled", true);
+							$("input.browserButton").prop(
+									"disabled", true);
+						} else {
+							$("input.specificationValuesImage")
+									.prop("disabled", false);
+							$("input.browserButton").prop(
+									"disabled", false);
+						}
+					});
+			$("input.browserButton").browser();
+			// 增加规格值
+			$addSpecificationValueButton
+					.click(function() {
+						if ($type.val() == "text") {
+							var trHtml = '<tr class="specificationValueTr"> <td> &nbsp; <\/td> <td> <input type="text" name="specificationValues[' + specificationValueIndex + '].name" class="text specificationValuesName" maxlength="200" \/> <\/td> <td> <span class="fieldSet"> <input type="text" name="specificationValues[' + specificationValueIndex + '].image" class="text specificationValuesImage" maxlength="200" disabled="disabled" \/> <input type="button" class="button browserButton" value="选择文件" disabled="disabled" \/> <\/span> <\/td> <td> <input type="text" name="specificationValues[' + specificationValueIndex + '].order" class="text specificationValuesOrder" maxlength="9" style="width: 30px;" \/> <\/td> <td> <a href="javascript:;" class="deleteSpecificationValue">[删除]<\/a> <\/td> <\/tr>';
+						} else {
+							var trHtml = '<tr class="specificationValueTr"> <td> &nbsp; <\/td> <td> <input type="text" name="specificationValues[' + specificationValueIndex + '].name" class="text specificationValuesName" maxlength="200" \/> <\/td> <td> <span class="fieldSet"> <input type="text" name="specificationValues[' + specificationValueIndex + '].image" class="text specificationValuesImage" maxlength="200" \/> <input type="button" class="button browserButton" value="选择文件" \/> <\/span> <\/td> <td> <input type="text" name="specificationValues[' + specificationValueIndex + '].order" class="text specificationValuesOrder" maxlength="9" style="width: 30px;" \/> <\/td> <td> <a href="javascript:;" class="deleteSpecificationValue">[删除]<\/a> <\/td> <\/tr>';
+						}
+						$specificationTable.append(trHtml).find(
+								"input.browserButton:last")
+								.browser();
+						specificationValueIndex++;
+					});
+			// 删除规格值
+			$deleteSpecificationValue.live("click", function() {
+				alert("自己做");
+			});
+	});
+</script>
+</head>
+<body>
+	<div class="path">
+		<a href="">首页</a> » 编辑规格
+	</div>
+	<form id="inputForm" action="update.html" method="post"
+		novalidate="novalidate">
+		<input type="hidden" name="id" value="1">
+			<table id="specificationTable" class="input">
+				<tbody>
+					<tr class="titleTr">
+						<th><span class="requiredField">*</span>名称:</th>
+						<td colspan="4"><input type="text" name="name" class="text"
+							value="颜色" maxlength="200">
+						</td>
+					</tr>
+					<tr>
+						<th>类型:</th>
+						<td colspan="4"><select id="type" name="type">
+								<option value="text">文本</option>
+								<option value="image" selected="selected">图片</option>
+						</select></td>
+					</tr>
+					<tr>
+						<th>备注:</th>
+						<td colspan="4"><input type="text" name="memo" class="text"
+							value="女装" maxlength="200">
+						</td>
+					</tr>
+					<tr>
+						<th>排序:</th>
+						<td colspan="4"><input type="text" name="order" class="text"
+							value="1" maxlength="9">
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td colspan="4"><a href="javascript:;"
+							id="addSpecificationValueButton" class="button">增加规格值</a></td>
+					</tr>
+					<tr class="title">
+						<td>&nbsp;</td>
+						<td>规格值名称</td>
+						<td>规格值图片</td>
+						<td>规格值排序</td>
+						<td>删除</td>
+					</tr>
+					<tr class="specificationValueTr">
+						<td>
+							<input type="hidden" name="specificationValues[0].id" value="1"/>
+						</td>
+						<td>
+							<input type="text" name="specificationValues[0].name" class="text specificationValuesName" value="无" maxlength="200"/>
+						</td>
+						<td>
+							<span class="fieldSet"> 
+								<input type="text"
+								   name="specificationValues[0].image"
+								   class="text specificationValuesImage valid"
+								   value="../img/1.gif" maxlength="200"/> 
+								<input type="button" class="button browserButton" value="选择文件"/> 
+								<img src="../img/1.gif" style="width: 20px; height: 20px; padding: 1px; vertical-align: middle; border: 1px solid #b2d3f4;"/>
+							</span>
+						</td>
+						<td>
+							<input type="text" name="specificationValues[0].order" class="text specificationValuesOrder" value="1" maxlength="9" style="width: 30px;"/>
+						</td>
+						<td><a href="javascript:;" class="deleteSpecificationValue">[删除]</a>
+						</td>
+					</tr>
+					<tr class="specificationValueTr">
+						<td>
+							<input type="hidden" name="specificationValues[1].id" value="2"/>
+						</td>
+						<td>
+							<input type="text" name="specificationValues[1].name" class="text specificationValuesName" value="黄色" maxlength="200"/>
+						</td>
+						<td>
+							<span class="fieldSet"> 
+								<input type="text"
+								   name="specificationValues[1].image"
+								   class="text specificationValuesImage valid"
+								   value="../img/2.gif" maxlength="200"/> 
+								<input type="button" class="button browserButton" value="选择文件"/> 
+								<img src="../img/2.gif" style="width: 20px; height: 20px; padding: 1px; vertical-align: middle; border: 1px solid #b2d3f4;"/>
+							</span>
+						</td>
+						<td>
+							<input type="text" name="specificationValues[1].order" class="text specificationValuesOrder" value="2" maxlength="9" style="width: 30px;"/>
+						</td>
+						<td><a href="javascript:;" class="deleteSpecificationValue">[删除]</a>
+						</td>
+					</tr>
+					<tr class="specificationValueTr">
+						<td>
+							<input type="hidden" name="specificationValues[2].id" value="3"/>
+						</td>
+						<td>
+							<input type="text" name="specificationValues[2].name" class="text specificationValuesName" value="酒红色" maxlength="200"/>
+						</td>
+						<td>
+							<span class="fieldSet"> 
+								<input type="text"
+								   name="specificationValues[2].image"
+								   class="text specificationValuesImage valid"
+								   value="../img/3.gif" maxlength="200"/> 
+								<input type="button" class="button browserButton" value="选择文件"/> 
+								<img src="../img/3.gif" style="width: 20px; height: 20px; padding: 1px; vertical-align: middle; border: 1px solid #b2d3f4;"/>
+							</span>
+						</td>
+						<td>
+							<input type="text" name="specificationValues[2].order" class="text specificationValuesOrder" value="3" maxlength="9" style="width: 30px;"/>
+						</td>
+						<td><a href="javascript:;" class="deleteSpecificationValue">[删除]</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="input" >
+				<tbody>
+					<tr>
+						<th>&nbsp;</th>
+						<td colspan="4">
+							<input type="submit" class="button"
+							value="确&nbsp;&nbsp;定"/> 
+							<input type="button" class="button" value="返&nbsp;&nbsp;回" onclick="location.href='list.html'"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+</body>
+</html>

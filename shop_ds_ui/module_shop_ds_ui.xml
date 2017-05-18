@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_shop_ds_ui" default="compile.module.shop_ds_ui">
+  <dirname property="module.shop_ds_ui.basedir" file="${ant.file.module_shop_ds_ui}"/>
+  
+  <property name="module.jdk.home.shop_ds_ui" value=""/>
+  <property name="module.jdk.bin.shop_ds_ui" value=""/>
+  <property name="module.jdk.classpath.shop_ds_ui" value=""/>
+  
+  <property name="compiler.args.shop_ds_ui" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="shop_ds_ui.output.dir" value="${module.shop_ds_ui.basedir}/WebRoot/WEB-INF/classes"/>
+  <property name="shop_ds_ui.testoutput.dir" value="${module.shop_ds_ui.basedir}/WebRoot/WEB-INF/classes"/>
+  
+  <path id="shop_ds_ui.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="shop_ds_ui.module.production.classpath">
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+  </path>
+  
+  <path id="shop_ds_ui.runtime.production.module.classpath">
+    <pathelement location="${shop_ds_ui.output.dir}"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+  </path>
+  
+  <path id="shop_ds_ui.module.classpath">
+    <pathelement location="${shop_ds_ui.output.dir}"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+  </path>
+  
+  <path id="shop_ds_ui.runtime.module.classpath">
+    <pathelement location="${shop_ds_ui.output.dir}"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.shop_ds_ui">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.shop_ds_ui">
+    <patternset refid="excluded.from.module.shop_ds_ui"/>
+  </patternset>
+  
+  <path id="shop_ds_ui.module.sourcepath">
+    <dirset dir="${module.shop_ds_ui.basedir}">
+      <include name="src"/>
+      <include name="config"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.shop_ds_ui" depends="compile.module.shop_ds_ui.production,compile.module.shop_ds_ui.tests" description="Compile module shop_ds_ui"/>
+  
+  <target name="compile.module.shop_ds_ui.production" depends="register.custom.compilers" description="Compile module shop_ds_ui; production classes">
+    <mkdir dir="${shop_ds_ui.output.dir}"/>
+    <javac2 destdir="${shop_ds_ui.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.shop_ds_ui}/javac">
+      <compilerarg line="${compiler.args.shop_ds_ui}"/>
+      <bootclasspath refid="shop_ds_ui.module.bootclasspath"/>
+      <classpath refid="shop_ds_ui.module.production.classpath"/>
+      <src refid="shop_ds_ui.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.shop_ds_ui"/>
+    </javac2>
+    
+    <copy todir="${shop_ds_ui.output.dir}">
+      <fileset dir="${module.shop_ds_ui.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.shop_ds_ui.basedir}/config">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.shop_ds_ui.tests" depends="register.custom.compilers,compile.module.shop_ds_ui.production" description="compile module shop_ds_ui; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.shop_ds_ui" description="cleanup module">
+    <delete dir="${shop_ds_ui.output.dir}"/>
+    <delete dir="${shop_ds_ui.testoutput.dir}"/>
+  </target>
+</project>

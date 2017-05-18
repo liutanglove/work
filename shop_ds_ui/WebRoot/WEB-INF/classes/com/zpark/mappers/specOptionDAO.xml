@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zpark.dao.SpecOptionDAO">
+	<resultMap type="SpeOption" id="so">
+		<id column="id" property="id"/>
+		<result column="img_url" property="imgUrl"/>
+		<result column="parentId" property="parentid"/>
+		<result column="sortNum" property="sortnum"/>
+		<result column="createTime" property="createtime"/>
+		<result column="lastUpdateTime" property="lastupdatetime"/>
+	</resultMap>
+	<select id="selectById" parameterType="String" resultMap="so">
+		select *
+		from s_speci_item_option
+		where parentId = #{id}
+	</select>
+	<insert id="insert" parameterType="SpeOption">
+		insert into s_speci_item_option
+		values (
+			#{id},
+			#{name,jdbcType=VARCHAR},
+			#{imgUrl,jdbcType=VARCHAR},
+			#{parentid,jdbcType=VARCHAR},
+			#{sortnum,jdbcType=VARCHAR},
+			#{createtime,jdbcType=TIMESTAMP},
+			#{lastupdatetime,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<!-- 更新 -->
+	<update id="update" parameterType="SpeOption">
+		update s_speci_item_option set 
+						name=#{name,jdbcType=VARCHAR},
+						img_url=#{imgUrl,jdbcType=VARCHAR},
+						parentId=#{parentid,jdbcType=VARCHAR},
+						sortNum=#{sortnum,jdbcType=VARCHAR},
+						createTime=#{createtime,jdbcType=TIMESTAMP},
+						lastUpdateTime=#{lastupdatetime,jdbcType=TIMESTAMP}
+						where id = #{id}
+	</update>
+	<delete id="delete" parameterType="list">
+		delete from s_speci_item_option where id in
+				<foreach collection="list" item="id" open="(" separator="," close=")">
+					#{id}
+				</foreach>
+	</delete>
+</mapper>

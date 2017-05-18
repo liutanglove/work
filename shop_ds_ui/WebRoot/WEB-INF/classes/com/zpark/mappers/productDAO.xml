@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zpark.dao.ProductDAO">
+	<!-- 插入 -->
+	<insert id="insertProduct" parameterType="Product">
+		insert into s_product values(
+								#{id},
+								#{name},
+								#{cid},
+								#{numb},
+								#{salePrice},
+								#{marketPrice},
+								#{isPro},
+								#{score},
+								#{introduce},
+								#{primaryImg}
+								)
+	</insert>
+	<!-- 查询所有产品 -->
+	<resultMap type="Product" id="pro">
+		<id column="id" property="id"/>
+		<result column="name" property="name" />
+		<result column="cid" property="cid" />
+		<result column="numb" property="numb" />
+		<result column="sale_price" property="salePrice" />
+		<result column="market_price" property="marketPrice" />
+		<result column="is_pro" property="isPro" />
+		<result column="score" property="score" />
+		<result column="introduce" property="introduce" />
+		<result column="primary_img" property="primaryImg" />
+		<association property="category" column="cid" javaType="Category" select="com.zpark.dao.CategoryDAO.selectCategoryById"></association>
+	</resultMap>
+	<select id="selectAllProduct" resultMap="pro">
+		select * from s_product 
+	</select>
+</mapper>

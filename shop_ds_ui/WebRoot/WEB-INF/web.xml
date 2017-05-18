@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:com/zpark/spring/applicationContext.xml</param-value>
+  </context-param>
+  
+    <servlet>
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<!-- 如果配置文件没有放置在默认位置，也没有有默认名，可以告知DispatcherServlet配置的位置所在 -->
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>classpath:com/zpark/mvcs/springmvc-servlet.xml</param-value>
+  	</init-param>
+  	<!-- 项目启动时随意创建 -->
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>hello</servlet-name>
+  	<!-- 将此控制器，设置为默认的servlet -->
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+	 <filter>
+		<filter-name>enc52</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<!-- 指明需要的编码方式 -->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	 </filter>
+	<filter-mapping>
+		<filter-name>enc52</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+</web-app>

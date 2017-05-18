@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0023)http://demo.shopxx.net/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>中关村软件 - Powered By kainejiang++</title>
+	<meta name="author" content="中关村软件 Team"/>
+	<meta name="copyright" content="中关村软件"/>
+	<meta name="keywords" content="中关村软件"/>
+	<meta name="description" content="中关村软件"/>
+	<link rel="icon" href="./img/favicon.ico" type="image/x-icon"/>
+	<link href="./css/common.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/login.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="./script/jquery.js"></script>
+</head>
+<body>
+	<!-- 头部DIV 开始 -->
+<div class="container header">
+	<div class="span5">
+		<div class="logo">
+			<a href="">
+				<img src="./img/logo.gif" alt="Zpark商城"/>
+			</a>
+		</div>
+	</div>
+	<div class="span9">
+		<div class="headerAd">
+				<img src="./img/header.jpg" width="320" height="50" alt="正品保障" title="正品保障"/>
+		</div>	
+	</div>
+	<div class="span10 last">
+		<div class="topNav clearfix">
+			<ul>
+				<li id="headerLogin" class="headerLogin" style="display: list-item;">
+					<a href="">登录</a>|
+				</li>
+				<li id="headerRegister" class="headerRegister" style="display: list-item;">
+					<a href="">注册</a>|
+				</li>
+				<li id="headerUsername" class="headerUsername"></li>
+				<li id="headerLogout" class="headerLogout">
+					<a href="">[退出]</a>|
+				</li>
+				<li><a href="">管理后台</a>|</li>
+				<li><a href="">会员中心</a>|</li>
+				<li><a href="">关于我们</a></li>
+			</ul>
+		</div>
+		<div class="cart"><a href="">购物车</a></div>
+		<div class="phone">
+			客服热线:<strong>101-8888888</strong>
+		</div>
+	</div>
+	<div class="span24">
+		<ul class="mainNav">
+			<li><a href="">首页</a>|</li>
+			<li><a href="">时尚女装</a>|</li>
+			<li><a href="">精品男装</a>|</li>
+			<li><a href="">精致内衣</a>|</li>
+			<li><a href="">服饰配件</a>|</li>
+			<li><a href="">时尚女鞋</a>|</li>
+			<li><a href="">流行男鞋</a>|</li>
+			<li><a href="">童装童鞋</a></li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="tagWrap">
+			<ul class="tag">
+				<li class="icon" style="background: url(./img/hot.gif) right no-repeat;">
+					<a href="">热销</a>
+				</li>
+				<li class="icon" style="background: url(./img/new.gif) right no-repeat;">
+					<a href="">最新</a>
+				</li>
+			</ul>
+			<div class="hotSearch">
+					热门搜索:
+						<a href="">T恤</a>
+						<a href="">衬衫</a>
+						<a href="">西服</a>
+						<a href="">西裤</a>
+						<a href="">森马</a>
+						<a href="">七匹狼</a>
+						<a href="">梵希蔓</a>
+						<a href="">春夏新款</a>
+						<a href="">牛仔裤</a>
+			</div>
+			<div class="search">
+				<form id="productSearchForm" action="" method="get">
+					<input name="keyword" class="keyword"  placeholder="商品搜索" maxlength="30"/>
+					<button type="submit">搜索</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 头部DIV 结束 -->
+<div class="container login">
+	<div class="span12">
+		<div class="ad">
+			<img src="./img/login.jpg" width="500" height="330" alt="会员登录" title="会员登录"/>
+		</div>		
+	</div>
+	<div class="span12 last">
+		<div class="wrap">
+			<div class="main">
+				<div class="title">
+					<strong>会员登录</strong>USER LOGIN
+				</div>
+				<form id="loginForm" action="" method="post" novalidate="novalidate">
+						<table>
+							<tbody><tr>
+								<th>
+										用户名/E-mail:
+								</th>
+								<td>
+									<input type="text" id="username" name="username" class="text" maxlength="20"/>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									密&nbsp;&nbsp;码:
+								</th>
+								<td>
+									<input type="password" id="password" name="password" class="text" maxlength="20" autocomplete="off"/>
+								</td>
+							</tr>
+								<tr>
+									<th>
+										验证码:
+									</th>
+									<td>
+										<span class="fieldSet">
+											<input type="text" id="captcha" name="captcha" class="text captcha" maxlength="4" autocomplete="off"/>
+											<img id="captchaImage" class="captchaImage" src="" title="点击更换验证码"/>
+										</span>
+									</td>
+								</tr>
+							<tr>
+								<th>
+									&nbsp;
+								</th>
+								<td>
+									<label>
+										<input type="checkbox" id="isRememberUsername" name="isRememberUsername" value="true"/>记住用户名
+									</label>
+									<label>
+										&nbsp;&nbsp;<a href="=">找回密码</a>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									&nbsp;
+								</th>
+								<td>
+									<input type="submit" class="submit" value="登 陆"/>
+								</td>
+							</tr>
+							<tr class="register">
+								<th>
+									&nbsp;
+								</th>
+								<td>
+									<dl>
+										<dt>还没有注册账号？</dt>
+										<dd>
+											立即注册即可体验在线购物！
+											<a href="">立即注册</a>
+										</dd>
+									</dl>
+								</td>
+							</tr>
+						</tbody></table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container footer">
+	<div class="span24">
+		<div class="footerAd">
+			<img src="./img/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势"/>
+		</div>	
+	</div>
+	<div class="span24">
+		<ul class="bottomNav">
+			<li>
+				<a href="">关于我们</a>
+				|
+			</li>
+			<li>
+				<a href="">联系我们</a>
+				|
+			</li>
+			<li>
+				<a href="">诚聘英才</a>
+				|
+			</li>
+			<li>
+				<a href="">法律声明</a>
+				|
+			</li>
+			<li>
+				<a href="">友情链接</a>
+				|
+			</li>
+			<li>
+				<a href="" target="_blank">支付方式</a>
+				|
+			</li>
+			<li>
+				<a href="" target="_blank">配送方式</a>
+				|
+			</li>
+			<li>
+				<a href="">Zpark商城官网</a>
+				|
+			</li>
+			<li>
+				<a href="">Zpark商城论坛</a>
+				
+			</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="copyright">Copyright © 2014-2014 Zpark商城 版权所有</div>
+	</div>
+</div>
+</body>

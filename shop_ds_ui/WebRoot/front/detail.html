@@ -1,0 +1,720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0023)http://demo.shopxx.net/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>中关村软件 - Powered By kainejiang++</title>
+<meta name="author" content="中关村软件 Team" />
+<meta name="copyright" content="中关村软件" />
+<meta name="keywords" content="中关村软件" />
+<meta name="description" content="中关村软件" />
+<link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+<link href="./css/common.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/MagicZoom.css" type="text/css"></link>
+<link rel="stylesheet" href="css/product.css" type="text/css"></link>
+<script type="text/javascript" src="./script/jquery.js"></script>
+<script type="text/javascript" src="./script/jquery.lazyload.js"></script>
+<script type="text/javascript" src="./script/jquery.jqzoom.js"></script>
+<script type="text/javascript" src="./script/jquery.tools.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var $zoom = $("#zoom");
+		var $scrollable = $("#scrollable");
+		var $thumbnail = $("#scrollable a");
+		// 商品图片放大镜
+		$zoom.jqzoom({
+			zoomWidth: 368,
+			zoomHeight: 368,
+			title: false,
+			showPreload: false,
+			preloadImages: false,
+			/* zoomType: 'drag|innerzoom|reverse'  */
+			zoomType: 'innerzoom'
+		});
+		// 商品缩略图滚动
+		$scrollable.scrollable();
+		//图片移动样式
+		$thumbnail.hover(function() {
+			var $this = $(this);
+			if ($this.hasClass("current")) {
+				return false;
+			} else {
+				$thumbnail.removeClass("current");
+				$this.addClass("current").click();
+			}
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="container header">
+		<div class="span5">
+			<div class="logo">
+				<a href=""> <img src="./img/logo.gif" alt="Zpark商城" /> </a>
+			</div>
+		</div>
+		<div class="span9">
+			<div class="headerAd">
+				<img src="./img/header.jpg" width="320" height="50" alt="正品保障"
+					title="正品保障" />
+			</div>
+		</div>
+		<div class="span10 last">
+			<div class="topNav clearfix">
+				<ul>
+					<li id="headerLogin" class="headerLogin"
+						style="display: list-item;"><a href="">登录</a>|</li>
+					<li id="headerRegister" class="headerRegister"
+						style="display: list-item;"><a href="">注册</a>|</li>
+					<li id="headerUsername" class="headerUsername">&lt;</li>
+					<li id="headerLogout" class="headerLogout"><a href="">[退出]</a>|
+					</li>
+					<li><a href="">管理后台</a>|</li>
+					<li><a href="">会员中心</a>|</li>
+					<li><a href="">关于我们</a>
+					</li>
+				</ul>
+			</div>
+			<div class="cart">
+				<a href="">购物车</a>
+			</div>
+			<div class="phone">
+				客服热线:<strong>101-8888888</strong>
+			</div>
+		</div>
+		<div class="span24">
+			<ul class="mainNav">
+				<li><a href="">首页</a>|</li>
+				<li><a href="">时尚女装</a>|</li>
+				<li><a href="">精品男装</a>|</li>
+				<li><a href="">精致内衣</a>|</li>
+				<li><a href="">服饰配件</a>|</li>
+				<li><a href="">时尚女鞋</a>|</li>
+				<li><a href="">流行男鞋</a>|</li>
+				<li><a href="">童装童鞋</a>
+				</li>
+			</ul>
+		</div>
+		<div class="span24">
+			<div class="tagWrap">
+				<ul class="tag">
+					<li class="icon"
+						style="background: url(./img/hot.gif) right no-repeat;"><a
+						href="">热销</a></li>
+					<li class="icon"
+						style="background: url(./img/new.gif) right no-repeat;"><a
+						href="">最新</a></li>
+				</ul>
+				<div class="hotSearch">
+					热门搜索: <a href="">T恤</a> <a href="">衬衫</a> <a href="">西服</a> <a
+						href="">西裤</a> <a href="">森马</a> <a href="">七匹狼</a> <a href="">梵希蔓</a>
+					<a href="">春夏新款</a> <a href="">牛仔裤</a>
+				</div>
+				<div class="search">
+					<form id="productSearchForm" action="" method="get">
+						<input name="keyword" class="keyword" placeholder="商品搜索"
+							maxlength="30" />
+						<button type="submit">搜索</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 头部 -->
+	<!-- 内容 -->
+	<div class="container productContent">
+		<!-- 左边 -->
+		<div class="span6">
+			<div class="hotProductCategory">
+				<dl>
+					<dt>
+						<a href="">时尚女装</a>
+					</dt>
+					<dd>
+						<a href="">连衣裙</a>
+					</dd>
+					<dd>
+						<a href="">针织衫</a>
+					</dd>
+					<dd>
+						<a href="">短外套</a>
+					</dd>
+					<dd>
+						<a href="">小西装</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a href="">精品男装</a>
+					</dt>
+					<dd>
+						<a href="">针织衫</a>
+					</dd>
+					<dd>
+						<a href="">POLO衫</a>
+					</dd>
+					<dd>
+						<a href="">休闲裤</a>
+					</dd>
+					<dd>
+						<a href="">牛仔裤</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a href="">精致内衣</a>
+					</dt>
+					<dd>
+						<a href="">女式内裤</a>
+					</dd>
+					<dd>
+						<a href="">男式内裤</a>
+					</dd>
+					<dd>
+						<a href="">保暖内衣</a>
+					</dd>
+					<dd>
+						<a href="">塑身衣</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a href="">服饰配件</a>
+					</dt>
+					<dd>
+						<a href="">女士腰带</a>
+					</dd>
+					<dd>
+						<a href="">男士皮带</a>
+					</dd>
+					<dd>
+						<a href="">女士围巾</a>
+					</dd>
+					<dd>
+						<a href="">男士围巾</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a href="">时尚女鞋</a>
+					</dt>
+					<dd>
+						<a href="">高帮鞋</a>
+					</dd>
+					<dd>
+						<a href="">雪地靴</a>
+					</dd>
+					<dd>
+						<a href="">中筒靴</a>
+					</dd>
+					<dd>
+						<a href="">单鞋</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a href="">流行男鞋</a>
+					</dt>
+					<dd>
+						<a href="">低帮鞋</a>
+					</dd>
+					<dd>
+						<a href="">高帮鞋</a>
+					</dd>
+					<dd>
+						<a href="">休闲鞋</a>
+					</dd>
+					<dd>
+						<a href="">正装鞋</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a href="">潮流女包</a>
+					</dt>
+					<dd>
+						<a href="">单肩包</a>
+					</dd>
+					<dd>
+						<a href="">双肩包</a>
+					</dd>
+					<dd>
+						<a href="">手提包</a>
+					</dd>
+					<dd>
+						<a href="">手拿包</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a href="">精品男包</a>
+					</dt>
+					<dd>
+						<a href="">单肩男</a>
+					</dd>
+					<dd>
+						<a href="">双肩包</a>
+					</dd>
+					<dd>
+						<a href="">手提包</a>
+					</dd>
+					<dd>
+						<a href="">手拿包</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a href="">童装童鞋</a>
+					</dt>
+					<dd>
+						<a href="">运动鞋</a>
+					</dd>
+					<dd>
+						<a href="">牛仔裤</a>
+					</dd>
+					<dd>
+						<a href="">套装</a>
+					</dd>
+					<dd>
+						<a href="">裤子</a>
+					</dd>
+				</dl>
+				<dl class="last">
+					<dt>
+						<a href="">时尚饰品</a>
+					</dt>
+					<dd>
+						<a href="">项链</a>
+					</dd>
+					<dd>
+						<a href="">手链</a>
+					</dd>
+					<dd>
+						<a href="">戒指</a>
+					</dd>
+					<dd>
+						<a href="">耳饰</a>
+					</dd>
+				</dl>
+			</div>
+			<div class="hotProduct">
+				<div class="title">热销商品</div>
+				<ul>
+					<li><a
+						href="" title="尚都比拉2013春夏装新款女装 春款淑女两件套 蕾丝雪纺短袖连衣裙">尚都比拉2013春夏装新款女装 春款</a>
+						<div>
+							<div>评分:</div>
+							<div class="score10"></div>
+							<div>5.0</div>
+						</div>
+						<div>
+							销售价: <strong>￥388.00元</strong>
+						</div>
+						<div>
+							月销量: <em>0</em>
+						</div></li>
+					<li><a
+						href=""
+						title="尚都比拉女装2013夏装新款蕾丝连衣裙 韩版修身雪纺打底裙子 春款">尚都比拉女装2013夏装新款蕾丝连</a>
+						<div>
+							销售价: <strong>￥298.00元</strong>
+						</div>
+						<div>
+							月销量: <em>0</em>
+						</div></li>
+					<li><a href=""
+						title="梵希蔓 2013夏装新款韩版连衣裙夏雪纺连衣裙短袖长款波西米亚">梵希蔓 2013夏装新款韩版连衣裙夏</a>
+						<div>
+							<div>评分:</div>
+							<div class="score8"></div>
+							<div>4.0</div>
+						</div>
+						<div>
+							销售价: <strong>￥260.00元</strong>
+						</div>
+						<div>
+							月销量: <em>0</em>
+						</div></li>
+					<li><a
+						href=""
+						title="梵希蔓 2013夏装新款女装女裙子长款雪纺百褶连衣裙韩版修身裙子">梵希蔓 2013夏装新款女装女裙子长</a>
+						<div>
+							<div>评分:</div>
+							<div class="score10"></div>
+							<div>5.0</div>
+						</div>
+						<div>
+							销售价: <strong>￥308.00元</strong>
+						</div>
+						<div>
+							月销量: <em>0</em>
+						</div></li>
+					<li><a
+						href=""
+						title="梵希蔓2013夏装新款蕾丝连衣裙镂空假两件套连衣裙刺绣短袖连衣裙">梵希蔓2013夏装新款蕾丝连衣裙镂</a>
+						<div>
+							<div>评分:</div>
+							<div class="score10"></div>
+							<div>5.0</div>
+						</div>
+						<div>
+							销售价: <strong>￥298.00元</strong>
+						</div>
+						<div>
+							月销量: <em>0</em>
+						</div></li>
+					<li class="last"><a
+						href=""
+						title="伊芙丽 春款夏装新款 女装复古短袖镂空花案 蕾丝连衣裙6339774">伊芙丽 春款夏装新款 女装复古短</a>
+						<div>
+							销售价: <strong>￥469.88元</strong>
+						</div>
+						<div>
+							月销量: <em>0</em>
+						</div></li>
+				</ul>
+			</div>
+			<div id="historyProduct" class="historyProduct">
+				<div class="title">最近浏览过的</div>
+				<ul>
+					<li><img src="./img/3dc28bfe-b4a7-4346-89a1-86b87d229faa-thumbnail.jpg"/>
+						<a href="">尚都比拉2013春夏装新款女装 春款淑女两件套 蕾丝雪纺短袖连衣裙</a>
+						<span>￥388.00</span>
+					</li>
+				</ul>
+				<a href="javascript:;" id="clearHistoryProduct" class="clearHistoryProduct">清除历史记录</a>
+			</div>
+		</div>
+		<!-- 左边 结束-->
+		<!-- 右边 -->
+		<div class="span18 last">
+		    <!-- 类别层级展示 -->
+			<div class="path">
+				<ul>
+					<li>
+						<a href="">首页</a>
+					</li>
+							<li>
+								<a href="">时尚女装</a>
+							</li>
+					<li>
+						<a href="">连衣裙</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 类别层级结束-->
+			<!-- 商品展示 -->
+			<div class="productImage">
+				 <a id="zoom" href="./img/3dc28bfe-b4a7-4346-89a1-86b87d229faa-large.jpg" rel="gallery" title="大图" style="outline-style: none; text-decoration: none;">
+					<img class="medium" src="./img/3dc28bfe-b4a7-4346-89a1-86b87d229faa-medium.jpg" title="" style="opacity: 1;"/>
+				 </a>
+				 <a href="javascript:;" class="prev disabled"></a>
+				 <div id="scrollable" class="scrollable">
+					<div class="items">
+						<a href="javascript:void(0);"  rel="{gallery: 'gallery', smallimage: './img/d762ecc6-5685-41b2-8c23-ef3e42d196a9-medium.jpg', largeimage: './img/d762ecc6-5685-41b2-8c23-ef3e42d196a9-large.jpg'}">
+						  <img src="./img/d762ecc6-5685-41b2-8c23-ef3e42d196a9-thumbnail.jpg" title="" />
+						</a>
+						<a href="javascript:void(0);"  rel="{gallery: 'gallery', smallimage: './img/3dc28bfe-b4a7-4346-89a1-86b87d229faa-medium.jpg', largeimage: './img/3dc28bfe-b4a7-4346-89a1-86b87d229faa-large.jpg'}">
+						  <img src="./img/3dc28bfe-b4a7-4346-89a1-86b87d229faa-thumbnail.jpg" title="" />
+						</a>
+					</div>
+				</div>
+				 <a href="javascript:;" class="next"></a>
+			</div>
+			<div class="name">尚都比拉2013春夏装新款女装 春款淑女两件套 蕾丝雪纺短袖连衣裙</div>
+			<div class="sn">
+				<div>编号: 2013041</div>
+					<div>评分:</div>
+					<div class="score10"></div>
+					<div>5.0 (评分数: 5)</div>
+			</div>
+			<div class="info">
+				<dl>
+					<dt>销售价:</dt>
+					<dd>
+						<strong>￥388.00</strong>市场价:
+						<del>￥465.60</del>
+					</dd>
+				</dl>
+					<dl>
+						<dt>促销:</dt>
+						<dd>
+							<a href="" target="_blank" title="2013-06-13 ~ 2015-01-01">限时抢购</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>赠送积分:</dt>
+						<dd>
+							<span>388</span>
+						</dd>
+					</dl>
+			</div>
+			<!-- 属性展示 -->
+			<!-- 选择栏目 -->
+			<div class="action">
+				<div id="specification" class="specification clearfix">
+					<div class="title" style="display: none;">请选择商品规格</div>
+						<dl>
+							<dt>
+								<span title="颜色">颜色:</span>
+							</dt>
+							<dd>
+								<a href="javascript:;" class="image selected" val="10">
+									<img src="./img/10.gif" alt="混色" title="混色"/>
+									<span title="点击取消选择">&nbsp;</span>
+								</a>
+							</dd>
+					     </dl>
+						 <dl>
+							<dt>
+								<span title="尺码">尺码:</span>
+							</dt>
+								<dd>
+									<a href="javascript:;" class="text selected" val="44">S<span title="点击取消选择">&nbsp;</span></a>
+								</dd>
+								<dd>
+									<a href="javascript:;" class="text" val="45">M<span title="点击取消选择">&nbsp;</span></a>
+								</dd>
+								<dd>
+									<a href="javascript:;" class="text" val="46">L<span title="点击取消选择">&nbsp;</span></a>
+								</dd>
+								<dd>
+									<a href="javascript:;" class="text" val="47">XL<span title="点击取消选择">&nbsp;</span></a>
+								</dd>
+						 </dl>
+				  </div>
+				  <dl class="quantity">
+						<dt>购买数量:</dt>
+						<dd>
+							<input type="text" id="quantity" name="quantity" value="1" maxlength="4" onpaste="return false;"/>
+							<div>
+								<span id="increase" class="increase">&nbsp;</span>
+								<span id="decrease" class="decrease">&nbsp;</span>
+							</div>
+						</dd>
+						<dd>
+							件
+						</dd>
+				  </dl>
+				  <div class="buy">
+						<input type="button" id="addCart" class="addCart" value="加入购物车"/>
+						<a href="javascript:;" id="addFavorite">收藏商品</a>
+				  </div>
+			</div>
+			<div id="bar" class="bar">
+				<ul style="position: absolute; top: 565px;">
+						<li id="introductionTab" class="">
+							<a href="#introduction">商品介绍</a>
+						</li>
+						<li id="parameterTab" class="">
+							<a href="#parameter">商品参数</a>
+						</li>
+						<li id="reviewTab" class="">
+							<a href="#review">商品评论</a>
+						</li>
+						<li id="consultationTab">
+							<a href="#consultation">商品咨询</a>
+						</li>
+				</ul>
+			</div>
+			<table class="brief">
+				<tbody><tr>
+						<th>裙长</th>
+						<td>
+							<span title="短裙(76-90厘米)">短裙(76-90厘米)</span>
+						</td>
+						<th>领型</th>
+						<td>
+							<span title="圆领">圆领</span>
+						</td>
+						<th>主材质</th>
+						<td>
+							<span title="聚酯纤维">聚酯纤维</span>
+						</td>
+							</tr>
+							<tr>
+						<th>袖长</th>
+						<td>
+							<span title="短袖">短袖</span>
+						</td>
+						<th>款式</th>
+						<td>
+							<span title="其他款式">其他款式</span>
+						</td>
+						<th>组合形式</th>
+						<td>
+							<span title="两件套">两件套</span>
+						</td>
+							</tr>
+				</tbody>
+			</table>
+			<div id="introduction" name="introduction" class="introduction">
+				<div class="title">
+					<strong>商品介绍</strong>
+				</div>
+				<div>
+					<img src="./img/f129cfc9-a544-46df-ba6d-5f8089940690.jpg"/>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<div id="parameter" name="parameter" class="parameter">
+				<div class="title">
+					<strong>商品参数</strong>
+				</div>
+				<table>
+					 <tbody>
+					    <tr>
+							<th class="group" colspan="2">基本参数</th>
+						</tr>
+						<tr>
+							<th>风格</th>
+							<td>通勤</td>
+						</tr>
+						<tr>
+							<th>组合形式</th>
+							<td>两件套</td>
+						</tr>
+				     </tbody>
+				  </table>
+			</div>
+			<div id="review" name="review" class="review">
+					<div class="title">商品评论</div>
+					<div class="content clearfix">
+							<div class="score">
+								<strong>5.0</strong>
+								<div>
+									<div class="score10"></div>
+									<div>评分数: 5</div>
+								</div>
+							</div>
+							<div class="graph">
+								<span style="width: 100.0%">
+									<em>5.0</em>
+								</span>
+								<div>&nbsp;</div>
+								<ul>
+									<li>非常不满</li>
+									<li>不满意</li>
+									<li>一般</li>
+									<li>满意</li>
+									<li>非常满意</li>
+								</ul>
+							</div>
+							<div class="handle">
+								<a href="" id="addReview">发表商品评论</a>
+							</div>
+							<table>
+								<tbody>
+									<tr>
+										<th>
+											这件裙子非常漂亮，也很合身，非常喜欢，推荐大家都试试。
+											<div class="score10"></div>
+										</th>
+										<td>
+												test
+											<span title="2013-06-13 01:52:37">2013-06-13</span>
+										</td>
+									 </tr>
+									 <tr>
+										<th>
+											裙子质量还可以，款式比较斯文。
+											<div class="score10"></div>
+										</th>
+										<td>
+												test
+											<span title="2013-06-13 01:52:36">2013-06-13</span>
+										</td>
+									 </tr>
+									</tbody>
+							 </table>
+							<p>
+								<a href="">[查看所有评论]</a>
+							</p>
+					</div>
+				</div>
+				<div id="consultation" name="consultation" class="consultation">
+					<div class="title">商品咨询</div>
+					<div class="content">
+							<ul>
+								<li>
+									请问这款衣服支持货到付款吗？
+									<span>
+											test
+										<span title="2013-06-13 01:53:33">2013-06-13</span>
+									</span>
+								</li>
+								<li class="last">
+									想请问该衣服M，L号具体的长度，胸围是多少？
+									<span>
+											test
+										<span title="2013-06-13 01:53:30">2013-06-13</span>
+									</span>
+								</li>
+							</ul>
+							<p>
+								<a href="" id="addConsultation">[发表商品咨询]</a>
+								<a href="">[查看所有咨询]</a>
+							</p>
+					</div>
+				</div>
+			<!-- 选择栏目 -->
+		</div>
+		<!-- 右边 -->
+	</div>
+	<!-- 内容 -->
+	<!-- foot -->
+	<div class="container footer">
+	<div class="span24">
+		<div class="footerAd">
+			<img src="./img/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势"/>
+		</div>	
+	</div>
+	<div class="span24">
+		<ul class="bottomNav">
+			<li>
+				<a href="">关于我们</a>
+				|
+			</li>
+			<li>
+				<a href="">联系我们</a>
+				|
+			</li>
+			<li>
+				<a href="">诚聘英才</a>
+				|
+			</li>
+			<li>
+				<a href="">法律声明</a>
+				|
+			</li>
+			<li>
+				<a href="">友情链接</a>
+				|
+			</li>
+			<li>
+				<a href="" target="_blank">支付方式</a>
+				|
+			</li>
+			<li>
+				<a href="" target="_blank">配送方式</a>
+				|
+			</li>
+			<li>
+				<a href="">Zpark商城官网</a>
+				|
+			</li>
+			<li>
+				<a href="">Zpark商城论坛</a>
+				
+			</li>
+		</ul>
+	</div>
+	<div class="span24">
+		<div class="copyright">Copyright © 2014-2014 Zpark商城 版权所有</div>
+	</div>
+</div>	
+	<!-- foot -->
+</body>

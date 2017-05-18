@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zpark.dao.CategoryDAO">
+	<!-- 查询所有的目录 -->
+	<resultMap type="Category" id="sac">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="lev" property="lev"/>
+		<collection property="categorys" javaType="list" ofType="Category" select="selectSecondCategory" column="id"/>
+	</resultMap>
+	<select id="selectAllCategory" resultMap="sac">
+		select * from s_category 
+		<where>
+			lev = '1'
+		</where>
+	</select>
+	<select id="selectSecondCategory" parameterType="String" resultMap="sac">
+		select * from s_category where parentId = #{parentId}
+	</select>
+	<insert id="insertCategory" parameterType="Category">
+		insert into s_category values(#{id},#{name},#{lev},#{parentId},#{createTime},#{lastUpdateTime})
+	</insert>
+	<select id="selectCategoryById" parameterType="String" resultType="Category">
+		select * from s_category where id = #{id}
+	</select>
+	<update id="updateCategory" parameterType="Category">
+		update s_category set name = #{name},lastUpdateTime = #{lastUpdateTime} where id = #{id}
+	</update>
+</mapper>
